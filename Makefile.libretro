@@ -48,7 +48,7 @@ ifneq ($(arch),ppc)
    ENDIANNESS_DEFINES = -DLSB_FIRST -DLOCAL_LE=1
 endif
    CFLAGS += -DHAVE_ASPRINTF
-OSXVER = `sw_vers -productVersion | cut -c 4`
+   OSXVER = `sw_vers -productVersion | cut -c 4`
 ifneq ($(OSXVER),9)
    fpic += -mmacosx-version-min=10.5
 endif
@@ -79,7 +79,7 @@ else ifeq ($(platform), ps3)
    CC = $(CELL_SDK)/host-win32/ppu/bin/ppu-lv2-gcc.exe
    AR = $(CELL_SDK)/host-win32/ppu/bin/ppu-lv2-ar.exe
    PLATFORM_DEFINES := -D__CELLOS_LV2
-	STATIC_LINKING = 1
+  STATIC_LINKING = 1
 	EXTERNAL_ZLIB = 1
 else ifeq ($(platform), sncps3)
    TARGET := $(TARGET_NAME)_libretro_ps3.a
